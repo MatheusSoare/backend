@@ -14,7 +14,7 @@ class BoxController{
             options: {sort: { createdAt: -1}}
         });
 
-        res.json(box);
+        return res.json(box);
     }
 }
 
