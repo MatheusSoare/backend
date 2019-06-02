@@ -7,6 +7,7 @@ const routes = express.Router();
 const BoxController = require('./controllers/BoxController');
 const FileController = require('./controllers/FileController');
 const UserController = require('./controllers/UserController');
+const LoginController = require('./controllers/LoginController');
 
 //Routes Boxes
 routes.post("/boxes",BoxController.store);
@@ -18,5 +19,8 @@ routes.get("/users/:id",UserController.show);
 
 //Routes Files
 routes.post("/boxes/:id/files", multer(multerConfig).single('file') ,FileController.store);
+
+//Routes Login
+routes.get("/login", LoginController.show);
 
 module.exports = routes;
