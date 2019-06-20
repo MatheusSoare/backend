@@ -8,6 +8,7 @@ const BoxController = require('./controllers/BoxController');
 const FileController = require('./controllers/FileController');
 const UserController = require('./controllers/UserController');
 const LoginController = require('./controllers/LoginController');
+const HandShakeController = require('./controllers/HandShakeController')
 
 //Routes Boxes
 routes.post("/boxes",BoxController.store);
@@ -22,5 +23,8 @@ routes.post("/boxes/:id/files", multer(multerConfig).single('file') ,FileControl
 
 //Routes Login
 routes.get("/login", LoginController.show);
+
+//Routes HandShake
+routes.get("/handshake", HandShakeController.doHandShake);
 
 module.exports = routes;
